@@ -3,7 +3,7 @@
 	import { EnvelopeOpen, GithubLogo } from 'radix-icons-svelte';
 </script>
 
-<footer class="colorful-bg relative h-72 p-3 transition-all duration-300 hover:backdrop-blur-xl">
+<footer class="colorful-bg relative h-72 p-3 transition-all duration-300">
 	<p
 		class="absolute bottom-[calc(10vw*-1+20px-1vw)] left-[calc(5vw-13px)] z-0 origin-top-left select-none font-bold mix-blend-overlay filter [font-size:calc(4.3vw*3.3)]"
 	>
