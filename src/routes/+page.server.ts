@@ -1,7 +1,5 @@
-import type { PageServerLoad } from './$types';
+export const load = async ({ locals: { getSession }, cookies }) => {
+	const session = await getSession();
 
-export const load = (async () => {
-	return {};
-}) satisfies PageServerLoad;
-
-export const prerender = true;
+	return { session, cookies: cookies.getAll() };
+};
