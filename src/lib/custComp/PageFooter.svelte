@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Button from '$lib/components/ui/button/button.svelte';
-	import { EnvelopeOpen, GithubLogo } from 'radix-icons-svelte';
+	import { EnvelopeOpen, GithubLogo, Slash } from 'svelte-radix';
 </script>
 
 <footer class="colorful-bg relative h-72 p-3 transition-all duration-300">
@@ -10,7 +10,25 @@
 		ØSTERGAARD
 	</p>
 
-	<div class="flex flex-wrap justify-center gap-3">
+	<div class="flex flex-wrap justify-start gap-3">
+		<Button href="/projects" variant="ghost">
+			<Slash class="h-5 w-5" />
+			<span> Projects </span>
+		</Button>
+		<Button href="/about" variant="ghost">
+			<Slash class="h-5 w-5" />
+			<span> About </span>
+		</Button>
+		<Button href="/contact" variant="ghost">
+			<Slash class="h-5 w-5" />
+			<span> Contact </span>
+		</Button>
+		<Button href="/auth" variant="ghost">
+			<Slash class="h-5 w-5" />
+			<span> Login </span>
+		</Button>
+	</div>
+	<div class="mb-3 flex flex-wrap justify-start gap-3">
 		<Button href="mailto:victor@voe.dk" class="gap-2" variant="ghost">
 			<EnvelopeOpen class="h-5 w-5" />
 			<span> victor@voe.dk </span>

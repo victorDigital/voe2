@@ -1,6 +1,6 @@
 <script>
 	import Button from '$lib/components/ui/button/button.svelte';
-	import { GithubLogo, Mix } from 'radix-icons-svelte';
+	import { GithubLogo, Mix } from 'svelte-radix';
 	import * as Card from '$lib/components/ui/card';
 	import Image from 'svimg/Image.svelte';
 </script>
@@ -22,7 +22,7 @@
 
 <div class="relative min-h-screen">
 	<div
-		class="absolute inset-0 h-full w-full bg-background bg-[radial-gradient(hsl(var(--border))_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_70%,#000_60%,transparent_100%)]"
+		class="absolute inset-0 h-full w-full bg-background bg-[radial-gradient(#a8a29e_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_70%,#000_60%,transparent_100%)]"
 	></div>
 	<div class="relative z-10 flex justify-center p-4 pt-20 md:pt-64">
 		<Card.Root
