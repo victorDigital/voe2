@@ -22,3 +22,5 @@ export const load = async ({ locals: { getSession, supabase }, cookies, params }
 
 	return { session, cookies: cookies.getAll(), post };
 };
+
+const prerender = true;
