@@ -77,11 +77,17 @@
 		<p>Loading...</p>
 	{/if}
 {:else}
-	{#await codeBlockRenderer({ code: text, lang: lang })}
-		<pre class="my-6 bg-white text-black dark:bg-black dark:text-white"><code>{text}</code></pre>
-	{:then html}
-		{@html html}
-	{:catch error}
-		<pre class="my-6 bg-white text-black dark:bg-black dark:text-white"><code>{text}</code></pre>
-	{/await}
+	<div class="w-[calc(100vw-32px)] max-w-full">
+		{#await codeBlockRenderer({ code: text, lang: lang })}
+			<pre class="my-6 w-full bg-white text-black dark:bg-black dark:text-white"><code
+					class="w-full">{text}</code
+				></pre>
+		{:then html}
+			{@html html}
+		{:catch error}
+			<pre class="my-6 w-full bg-white text-black dark:bg-black dark:text-white"><code
+					class="w-full">{text}</code
+				></pre>
+		{/await}
+	</div>
 {/if}
