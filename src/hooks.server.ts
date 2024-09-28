@@ -5,18 +5,23 @@ import { JWT_SECRET } from '$env/static/private';
 import * as jose from 'jose';
 import type { Session } from '@supabase/supabase-js';
 import type { SupabaseJwt } from './types.js';
+import type { Database } from '$lib/types/database.types';
 
 export const handle: Handle = async ({ event, resolve }) => {
-	event.locals.supabase = createServerClient(PUBLIC_SUPABASE_URL, PUBLIC_SUPABASE_ANON_KEY, {
-		cookies: {
-			getAll: () => event.cookies.getAll(),
-			setAll: (cookies) => {
-				cookies.forEach(({ name, value, options }) => {
-					event.cookies.set(name, value, { ...options, path: '/' });
-				});
+	event.locals.supabase = createServerClient<Database>(
+		PUBLIC_SUPABASE_URL,
+		PUBLIC_SUPABASE_ANON_KEY,
+		{
+			cookies: {
+				getAll: () => event.cookies.getAll(),
+				setAll: (cookies) => {
+					cookies.forEach(({ name, value, options }) => {
+						event.cookies.set(name, value, { ...options, path: '/' });
+					});
+				}
 			}
 		}
-	});
+	);
 
 	event.locals.getSession = async (): Promise<Session | null> => {
 		const {

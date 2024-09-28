@@ -1,10 +1,8 @@
-<svelte:options runes={true} />
-
 <script lang="ts">
 	import PageFooter from '$lib/custComp/PageFooter.svelte';
 	import { Pencil2, MixerHorizontal, Home, Exit } from 'svelte-radix';
 
-	let { children, data } = $props();
+	export let data;
 	import '../app.css';
 	import Button from '$lib/components/ui/button/button.svelte';
 
@@ -36,8 +34,8 @@
 			</form>
 		</div>
 	{/if}
-	<div class="min-h-screen overflow-hidden rounded-2xl bg-background p-3">
-		{@render children()}
+	<div class="min-h-screen overflow-hidden rounded-2xl bg-background py-4">
+		<slot></slot>
 	</div>
 	<div class="overflow-hidden rounded-2xl bg-background">
 		<PageFooter />

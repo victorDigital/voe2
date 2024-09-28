@@ -1,3 +1,5 @@
+import { redirect } from '@sveltejs/kit';
+
 export const load = async ({ locals: { getSession, supabase }, cookies, params }) => {
 	const session = await getSession();
 
@@ -15,10 +17,7 @@ export const load = async ({ locals: { getSession, supabase }, cookies, params }
 	}
 
 	if (!post) {
-		return {
-			status: 404,
-			error: new Error('Not found')
-		};
+		throw redirect(302, '/');
 	}
 
 	return { session, cookies: cookies.getAll(), post };

@@ -88,44 +88,46 @@
 	}
 </script>
 
-<div class="mb-3 grid w-full max-w-sm items-center gap-1.5">
-	<Label for="heading">Heading</Label>
-	<Input bind:value={heading} placeholder="Heading" />
-</div>
-
-<div class="mb-3 grid w-full max-w-sm items-center gap-1.5">
-	<Label for="subheading">Subheading</Label>
-	<Input bind:value={subheading} placeholder="Subheading" />
-</div>
-
-<div class="mb-3 grid w-full max-w-sm items-center gap-1.5">
-	<Label for="slug">Slug</Label>
-	<Input bind:value={Slug} placeholder="Slug" />
-</div>
-
-<form
-	action="?/uploadimg"
-	method="post"
-	enctype="multipart/form-data"
-	use:enhance
-	on:submit|preventDefault={uploadImg}
->
-	<div class="mb-6 grid w-full max-w-sm items-center gap-1.5">
-		<Label for="picture">Pictures</Label>
-		{#each images as link}
-			<img src={link} alt="cover img" class="h-20 w-20" />
-		{/each}
-		<input
-			id="picture"
-			name="picture"
-			type="file"
-			bind:this={fileEl}
-			class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-		/>
-		<Button type="submit">Upload</Button>
+<div class="px-4">
+	<div class="mb-3 grid w-full max-w-sm items-center gap-1.5">
+		<Label for="heading">Heading</Label>
+		<Input bind:value={heading} placeholder="Heading" />
 	</div>
-</form>
 
-<div class="h-[40rem]" bind:this={editorContainer}></div>
+	<div class="mb-3 grid w-full max-w-sm items-center gap-1.5">
+		<Label for="subheading">Subheading</Label>
+		<Input bind:value={subheading} placeholder="Subheading" />
+	</div>
 
-<Button class="mt-6 w-full" size="lg" on:click={uploadData}>Publish</Button>
+	<div class="mb-3 grid w-full max-w-sm items-center gap-1.5">
+		<Label for="slug">Slug</Label>
+		<Input bind:value={Slug} placeholder="Slug" />
+	</div>
+
+	<form
+		action="?/uploadimg"
+		method="post"
+		enctype="multipart/form-data"
+		use:enhance
+		on:submit|preventDefault={uploadImg}
+	>
+		<div class="mb-6 grid w-full max-w-sm items-center gap-1.5">
+			<Label for="picture">Pictures</Label>
+			{#each images as link}
+				<img src={link} alt="cover img" class="h-20 w-20" />
+			{/each}
+			<input
+				id="picture"
+				name="picture"
+				type="file"
+				bind:this={fileEl}
+				class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+			/>
+			<Button type="submit">Upload</Button>
+		</div>
+	</form>
+
+	<div class="h-[40rem]" bind:this={editorContainer}></div>
+
+	<Button class="mt-6 w-full" size="lg" on:click={uploadData}>Publish</Button>
+</div>

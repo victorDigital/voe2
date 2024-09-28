@@ -59,7 +59,11 @@ const config: Config = {
 				mono: [...fontFamily.mono]
 			}
 		}
-	}
+	},
+	plugins: [
+		require('@tailwindcss/typography')
+		// ...
+	]
 };
 
 export default config;
