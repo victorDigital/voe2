@@ -59,7 +59,9 @@
 	{#await expressionRenderer(text) then value}
 		<HoverCard.Root>
 			<HoverCard.Trigger class="no-underline"
-				><div class="my-3">{@html value}</div></HoverCard.Trigger
+				><div class="my-3 w-[calc(100vw-32px)] max-w-full rounded-lg bg-border p-2">
+					{@html value}
+				</div></HoverCard.Trigger
 			>
 			<HoverCard.Content class="w-screen max-w-md break-all">
 				<p class="font-mono text-sm">{text}</p>

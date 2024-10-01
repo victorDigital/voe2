@@ -41,7 +41,7 @@
 			<h2 class="text-xl">{data.post.subheading}</h2>
 
 			<p>{new Date(data.post.created_at).toLocaleDateString()}</p>
-			<Separator />
+			<Separator class="w-full" />
 		</div>
 
 		<main class="prose prose-neutral mb-40 w-full max-w-4xl">
